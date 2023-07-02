@@ -15,6 +15,7 @@ match race:
     case 1: hero['race'] = 'Эльф'
     case 2: hero['race'] = 'Орк'
     case 3: hero['race'] = 'Человек'
+    case _: hero['race'] = 'Нежить'
 
 
 # Создаём массив со значениями статов
@@ -77,6 +78,9 @@ match klass:
     case 3:
         hero['klass'] = 'Маг'
         stats = stats_low + stats_high
+    case _:
+        hero['klass'] = 'Уникальный'
+        random.shuffle(stats)
 
 # выводим информацию о персонаже
 print('Ваш персонаж:', hero['name'], hero['klass'], hero['race'])
